@@ -4,7 +4,15 @@
 <script type="text/javascript" src="lib/treeview.js"></script>
 </head>
 
-<body onload="displayTree('data.xml', window.innerWidth-20, window.innerHeight-20)">
+<body onload="displayTree('data.xml', window.innerWidth-200, window.innerHeight-200)">
 	<canvas id="canvas"></canvas>
+	<div id="editor">
+		<form name="edit_form" method="POST">
+		<label for="edit_label">Label</label>
+		<input id="edit_label" type="text" size="25" value="Label" />
+		<label for="edit_url">URL</label>
+		<input id="edit_url" type="text" size="25" value="URL" />
+		</form>
+	</div>
 </body>
 </html>
