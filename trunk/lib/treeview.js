@@ -117,6 +117,9 @@ function displayTree(xmlFile, width, height){
 	
 	var canvas = document.getElementById("canvas");
 	var p = Processing(canvas);
+	// for cursor type maintenance
+	var oldCursor = "default";
+	var cursorState = 1;
 	
 	//Processing init function
 	p.setup = function(){
@@ -133,6 +136,29 @@ function displayTree(xmlFile, width, height){
 	p.draw = function(){
 		p.background(200, 255, 255);
 		display(root);
+		setCursor();
+	}
+	
+	//Set the cursor based on mouse pointer location
+	function setCursor(){
+		cursorState = 1;
+		for(var i=0; i<allNodes.length; i++){
+			if(beingDragged != null && allNodes[i] == beingDragged){
+				cursorState = 2;
+			} else if(p.mouseX >= allNodes[i].x-allNodes[i].width/2 && p.mouseX <= allNodes[i].x+allNodes[i].width/2 
+					&& p.mouseY >= allNodes[i].y-allNodes[i].height/2 && p.mouseY <= allNodes[i].y+allNodes[i].height/2){
+				cursorState = 3;
+			}
+		}	
+		
+		// Cursor types: auto, crosshair, default, hand, help, move, pointer, text, wait, arrow-resize. 			
+		if (cursorState == 1) {
+			canvas.style.cursor = "default";
+		} else if (cursorState == 2) {
+			canvas.style.cursor = "move";
+		} else if (cursorState == 3) {
+			canvas.style.cursor = "pointer";
+		}		
 	}
 	
 	//Recursively called to display appropriate nodes and link them with lines
@@ -140,26 +166,28 @@ function displayTree(xmlFile, width, height){
 	function display(node){
 		if(node.visible){
 			if(beingDragged != null && node == beingDragged){
-				p.fill(100, 255, 100);
-			} else if(p.mouseX >= node.x-boxWidth/2 && p.mouseX <= node.x+boxWidth/2 
- 				&& p.mouseY >= node.y-boxHeight/2 && p.mouseY <= node.y+boxHeight/2 && node.children.length > 0){
- 				p.fill(255, 255, 0);
+				//p.fill(100, 255, 100);
+				p.fill(200);
+			} else if(p.mouseX >= node.x-node.width/2 && p.mouseX <= node.x+node.width/2 
+ 				&& p.mouseY >= node.y-node.height/2 && p.mouseY <= node.y+node.height/2 && node.children.length > 0){
+ 				//p.fill(255, 255, 0);
+				p.fill(233);
  			} else {
  				p.fill(255, 255, 255);
  			}
-  			p.rect(node.x, node.y, boxWidth, boxHeight);
+  			p.rect(node.x, node.y, node.width, node.height);
   			p.fill(0, 0, 0);
   			p.text(node.label, node.x-35, node.y+5);
   			
   			//Used for drag/drop
-  			var x_origin = node.x + boxWidth/2;
+  			var x_origin = node.x + node.width/2;
   			var y_origin = node.y;
   			
   			//Recurse on children and draw connecting lines
   			for(var i=0; i<node.children.length; i++){
   				if(node.children[i].visible){
   					display(node.children[i]);
-  					p.line(x_origin, y_origin, node.children[i].x - boxWidth/2, node.children[i].y);
+  					p.line(x_origin, y_origin, node.children[i].x - node.children[i].width/2, node.children[i].y);
   				}
   			}
 		}
@@ -172,8 +200,8 @@ function displayTree(xmlFile, width, height){
 			
 			//Determine which node is clicked on
  			for(var i=0; i<allNodes.length; i++){
- 				if(p.mouseX >= allNodes[i].x-boxWidth/2 && p.mouseX <= allNodes[i].x+boxWidth/2 
- 					&& p.mouseY >= allNodes[i].y-boxHeight/2 && p.mouseY <= allNodes[i].y+boxHeight/2){
+ 				if(p.mouseX >= allNodes[i].x-allNodes[i].width/2 && p.mouseX <= allNodes[i].x+allNodes[i].width/2 
+ 					&& p.mouseY >= allNodes[i].y-allNodes[i].height/2 && p.mouseY <= allNodes[i].y+allNodes[i].height/2){
  					clickedNode = allNodes[i];
  					break;
  				}
@@ -203,8 +231,8 @@ function displayTree(xmlFile, width, height){
 			
 			//Determine which node is clicked on
  			for(var i=0; i<allNodes.length; i++){
- 				if(p.mouseX >= allNodes[i].x-boxWidth/2 && p.mouseX <= allNodes[i].x+boxWidth/2 
- 					&& p.mouseY >= allNodes[i].y-boxHeight/2 && p.mouseY <= allNodes[i].y+boxHeight/2){
+ 				if(p.mouseX >= allNodes[i].x-allNodes[i].width/2 && p.mouseX <= allNodes[i].x+allNodes[i].width/2 
+ 					&& p.mouseY >= allNodes[i].y-allNodes[i].height/2 && p.mouseY <= allNodes[i].y+allNodes[i].height/2){
  					clickedNode = allNodes[i];
  					break;
  				}
@@ -221,6 +249,8 @@ function displayTree(xmlFile, width, height){
  				for(var i=0; i<allNodes.length; i++){
  					allNodes[i].oldx = allNodes[i].x;
  					allNodes[i].oldy = allNodes[i].y;
+					allNodes[i].oldwidth = allNodes[i].width;
+ 					allNodes[i].oldheight = allNodes[i].height;
  				}
  			 	difx = p.mouseX;
  				dify = p.mouseY;
@@ -249,6 +279,32 @@ function displayTree(xmlFile, width, height){
   				clickedNode.x = p.mouseX-difx; 
     			clickedNode.y = p.mouseY-dify;
   			} else {
+				//p.pushMatrix();
+				// zooming only refers to the difference in y-axis 				
+				zoomLevel = 1.0 + (p.mouseY - dify) / 2000.0;
+				
+				//zoomLevel = p.constrain(zoomLevel, -2.5, 2.5);
+				//alert(zoomLevel);
+				
+  				for(var i=0; i<allNodes.length; i++){
+  					allNodes[i].x = allNodes[i].oldx * zoomLevel;//p.mouseX - difx;
+  					allNodes[i].y = allNodes[i].oldy * zoomLevel;//p.mouseY - dify;
+  					allNodes[i].oldx = allNodes[i].x;
+  					allNodes[i].oldy = allNodes[i].y;					
+					allNodes[i].width = allNodes[i].oldwidth * zoomLevel;
+					allNodes[i].height = allNodes[i].oldheight * zoomLevel;		
+  					allNodes[i].oldwidth = allNodes[i].width;
+  					allNodes[i].oldheight = allNodes[i].height;								
+					//p.rect(allNodes[i].x, allNodes[i].y, allNodes[i].width, allNodes[i].height);
+					
+					p.scale(zoomLevel);
+					difx = p.mouseX;
+					dify = p.mouseY;
+					
+
+					//p.translate(-zoomLevel, -zoomLevel);
+  				}	
+				//p.popMatrix();				
 //				if(mousePressed) { 
 //				  sval += 0.005; 
 //				} 
@@ -265,11 +321,6 @@ function displayTree(xmlFile, width, height){
 //				translate(width/2 + nmx * zoomLevel-100, height/2 + nmy*zoomLevel - 200, -50);
 				//p.translate(width/2 + zoomLevel-100, height/2 + zoomLevel - 200, -50);
 
-				
-  				for(var i=0; i<allNodes.length; i++){
-  					allNodes[i].x = allNodes[i].oldx + p.mouseX - difx;
-  					allNodes[i].y = allNodes[i].oldy + p.mouseY - dify;
-  				}
   			}
   		}
 	}
@@ -279,16 +330,15 @@ function displayTree(xmlFile, width, height){
 		//If mouse has not moved since mousedown, expand/collapse tree
 		if(!mouseMoved){
 			if (p.mouseButton == p.LEFT){
-				//Determine which node was clicked
 				clickedNode = null;
+				//Determine which node is clicked on
 	 			for(var i=0; i<allNodes.length; i++){
-	 				if(p.mouseX >= allNodes[i].x-boxWidth/2 && p.mouseX <= allNodes[i].x+boxWidth/2 
-	 					&& p.mouseY >= allNodes[i].y-boxHeight/2 && p.mouseY <= allNodes[i].y+boxHeight/2){
+	 				if(p.mouseX >= allNodes[i].x-allNodes[i].width/2 && p.mouseX <= allNodes[i].x+allNodes[i].width/2 
+	 					&& p.mouseY >= allNodes[i].y-allNodes[i].height/2 && p.mouseY <= allNodes[i].y+allNodes[i].height/2){
 	 					clickedNode = allNodes[i];
 	 					break;
 	 				}
-	 			}
-	 		
+	 			}	 		
 	 			if(clickedNode == null){
 	 				return;
 	 			}
@@ -312,7 +362,7 @@ function displayTree(xmlFile, width, height){
 	 			}
 	 		
 	 			for(var i=0; i<clickedNode.children.length; i++){
-	 				//Don't automatically position nodes if its already been moved
+	 				//Don't automatically position nodes if it's already been moved
 	 				if(!clickedNode.children[i].moved){
 	 					clickedNode.children[i].x = clickedNode.x + 140;
 	 					clickedNode.children[i].y = clickedNode.y + ((i - ypivot) * yspacing);
@@ -321,23 +371,11 @@ function displayTree(xmlFile, width, height){
 	 			}
 			} else if (p.mouseButton == p.RIGHT){
 		
-				//p.link(clickedNode.url, "_blank");	
-				//openNewWindow(clickedNode.url); 								
+				//p.link(clickedNode.url, "_new");	
+				openNewWindow(clickedNode.url); 								
 			}	
 		} else if (mouseMoved){
-
-				zoomLevel = p.mouseY - dify;	// zooming only refers to the difference in y-axis 				
-				zoomLevel /= 100.0;
-				
-				//zoomLevel = p.constrain(zoomLevel, -2.5, 2.5);
-				alert(zoomLevel);
-				
-  				for(var i=0; i<allNodes.length; i++){
-  					//allNodes[i].x = allNodes[i].oldx + p.mouseX - difx;
-  					//allNodes[i].y = allNodes[i].oldy + p.mouseY - dify;
-					p.translate(allNodes[i].width + zoomLevel, allNodes[i].height + zoomLevel);
-					allNodes[i].scale(1.0 + zoomLevel);
-  				}				
+			
 				
 					
 		}
