@@ -5,9 +5,9 @@
 
 Treeview is represented in an XML file. Each node in a tree is represented as a 'node' tag. Each node element consists of three tags.
 
-  *label: node description (shown as the node text)
-  *url: URL linked to the node
-  *children: 0 or more nodes
+  * label: node description (shown as the node text)
+  * url: URL linked to the node
+  * children: 0 or more nodes
 
 
 = Example =
