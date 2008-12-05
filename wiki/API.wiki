@@ -17,12 +17,35 @@ This highly-interactive tree-view is very simple to reuse. All that is required 
 </html>
 }}}
 
-Because this interaction is entirely JavaScript based, essentially any existing web framework ranging from other JavaScript libraries to full web application frameworks such as Rails can use it right out of the box. We also provide customization arguments to the displayTree() function. 
+Because this interaction is entirely JavaScript based, essentially any existing web framework ranging from other JavaScript libraries to full web application frameworks such as Rails can use it right out of the box. 
+
+If you want to customize the tree, you can use the API functions to change the design of the tree.
+{{{
+function loadTree(){
+        setActiveColor("#D1A925");
+	setCanvasColor("#FFFAE4");
+	setNodeColor("#40637D");
+	setNodeFontType("Calibri");
+	setFontColor("#FFFFFF");
+	setSelectedColor("#26393D");
+	setHoverColor("#D1A925");
+	setLineColor("#26393D");
+	setBorderColor("#26393D");
+	setHasBorder(false);
+	setIsExpanded(true);
+	displayTree('data.xml', 900, 500);		
+}
+}}}
+
+Then simply call this function on the onload event in the body of the HTML.
+{{{
+        <body onload="loadTree()">
+}}}
 
 
 = API Reference =
 
-==Tree==
+==Tree-related API==
 ===displayTree===
   * display the tree in the canvas
   * arguments: (XML file, canvas width, canvas height)
@@ -36,7 +59,7 @@ Because this interaction is entirely JavaScript based, essentially any existing 
   * arguments: true (expanded) / false (collapsed)
   * return: none
 
-==Canvas==
+==Canvas-related API==
 ===getCanvasWidth===
   * get the canvas width
   * arguments: none
@@ -62,7 +85,7 @@ Because this interaction is entirely JavaScript based, essentially any existing 
   * arguments: color value in hex (#xxxxxx)
   * return: none
 
-==Font==
+==Font-related API==
 ===getFontColor===
   * get the font color
   * arguments: none
@@ -80,7 +103,7 @@ Because this interaction is entirely JavaScript based, essentially any existing 
   * arguments: none
   * return: font name (ex: "Verdana", "Arial")
 
-==Node==
+==Node-related API==
 ===getNodeWidth===
   * get the node width
   * arguments: none
