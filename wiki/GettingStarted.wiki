@@ -1,12 +1,10 @@
-#summary One-sentence summary of this page.
 #labels Featured
-
-How can you use treeview in your web application?
+#How can you use treeview in your web application?
 
 = Introduction =
 First, you need to download two Javascript files.
   * [http://ejohn.org/apps/processing.js/processing.js processing.js]
-  * [treeview.js]
+  * [http://code.google.com/p/interactive-treeview/source/browse/trunk/lib/treeview.js treeview.js]
 
 = Adding Treeview =
 This highly-interactive tree-view is very simple to reuse. All that is required is to include the required JavaScript files, the address of an input XML file with the appropriate schema, an empty canvas element inside an arbitrary HTML page, and make a call to the displayTree() method. For instance, the following complete HTML page displays the basic treeview:
