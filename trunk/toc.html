@@ -9,7 +9,7 @@
 		setCanvasColor("#8F2800");
 		setNodeColor("#FFB03B");
 		setNodeFontType("Arial");
-		setFontColor("#468A67");
+		setFontColor("#000000");
 		setSelectedColor("#FFF0A5");
 		setHoverColor("#B54926");
 		setLineColor("#FFF0A5");
@@ -19,24 +19,52 @@
 		displayTree('toc.xml', 900, 500);		
 	}
 </script>
+<style type="text/css">
+body {
+	font-family: Georgia;
+}
+canvas {
+	text-align: center;
+}
+#actions {
+	position: absolute;
+	top:100px;
+	right:0px;
+}
+</style>
 </head>
 
 <body onload="loadTree()">
+	<h1>Python Tutorial - Interactive Table of Contents</h1>
 	<canvas id="canvas"></canvas>
 	<div id="editor">
-		Current Node<br/>
-		Label:<span id="show_label">None</span> URL:<a id="show_url" target="_blank">None</span>
 		<form name="edit_form" action="" method="POST">
-			Selected Node<br/>
-			<label for="edit_label">Label</label>
-			<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>
-			<label for="edit_url">URL</label>
-			<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>
-			<input type="button" value="Update node" onClick="updateNode(this.form)"/>
-			<br/>
-		</form>
-		<input type="button" value="Expand all" onClick="expandAll()"/>
-		<input type="button" value="Collapse all" onClick="collapseAll()"/>
+		<table id="editor_table">
+			<tr>
+				<td>Label:<span id="show_label">None</span></td>
+				<td>			
+					<!--<label for="edit_label">Label</label>
+					<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>-->
+				</td>
+			</tr>
+			<tr>
+				<td>URL:<a id="show_url" target="_blank">None</a></td>
+				<td>
+					<!--<label for="edit_url">URL</label>
+					<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>-->
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><!--<input type="button" value="Update node" onClick="updateNode(this.form)"/>--></td>
+			</tr>		
+		</table>	
+		</form>			 
 	</div>
+	<div id="actions">
+		<input type="button" value="Expand all" onClick="expandAll()"/><br />
+		<input type="button" value="Collapse all" onClick="collapseAll()"/><br />
+	</div>
+
 </body>
 </html>

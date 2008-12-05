@@ -5,31 +5,58 @@
 <script type="text/javascript" src="lib/treeview.js"></script>
 <style type="text/css">
 body {
-	font-family: Verdana;
+	font-family: Tahoma;
 	background-color: #d8da3d }
 canvas {
 	text-align: center;
+}
+#editor{
+	position: absolute;
+	top:100px;
+	right:10px;	
+}
+#interactions{
+	font-size: smaller;
 }
 </style>
 
 </head>
 
 <body onload="displayTree('stanford.xml', 750, 500)">
+	<h2>Stanford CS Information</h2>	
 	<canvas id="canvas"></canvas>
 	<div id="editor">
-		Current Node<br/>
-		Label:<span id="show_label">None</span> URL:<a id="show_url" target="_blank">None</span>
+		<h3>Node Editor</h3>
 		<form name="edit_form" action="" method="POST">
-			Selected Node<br/>
-			<label for="edit_label">Label</label>
-			<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>
-			<label for="edit_url">URL</label>
-			<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>
-			<input type="button" value="Update node" onClick="updateNode(this.form)"/>
+			1) Select a node.<br/>
+			2) Edit.<br/>
+			3) Click 'Update Node'.<br/>
+			<label for="edit_label">Label</label><br/>
+			<input id="edit_label" name="edit_label" type="text" size="30" value="Label" disabled="disabled"/><br/>
+			<label for="edit_url">URL</label><br/>
+			<input id="edit_url" name="edit_url" type="text" size="30" value="URL" disabled="disabled"/><br/>
+			<input type="button" value="Update node" onClick="updateNode(this.form)"/><br/>
 			<br/>
 		</form>
+		<h3>Interactions</h3>
+		<div id="interactions">
+		* L-click the node: expand & collapse <br/>
+		* L-click the empty space: dance!<br/>	
+		* L-click & drag the empty space:	panning<br/>
+		* R-click the node: open URL<<br/>
+		* R-click the empty space: zoom to fit <br/>
+		* R-click & drag the empty space: zoom<br/>
+		* Drag node: move the node<br/>
+		</div>
+	</div>
+	<div id="display">
+		<table><tr>
+		<td width="300">
+			Label:<span id="show_label">None</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td>URL:<a id="show_url" target="_blank">None</span></td>
+		</tr></table>		
 		<input type="button" value="Expand all" onClick="expandAll()"/>
-		<input type="button" value="Collapse all" onClick="collapseAll()"/>
+		<input type="button" value="Collapse all" onClick="collapseAll()"/><br/>
 	</div>
 </body>
 </html>
