@@ -29,46 +29,38 @@ canvas {
 	text-align: center;
 	border: 1px solid darkred;
 }
-#editor_table {
-	border: 1px solid darkred;
+#editor {
+	margin-top: 10px;
+}
+#show_url, #show_label{
+	display: none;
+}
+#actions {
+	position: absolute;
+	top:100px;
+	right:5px;
 }
 </style>
 </head>
 
 
 <body onload="loadTree()">
+	<h2>Amazon Sitemap</h2>
 	<canvas id="canvas"></canvas>
 	<div id="editor">
 		<form name="edit_form" action="" method="POST">
-		<table id="editor_table">
-			<tr>
-				<td>Current Node</td>
-				<td>Selected Node</td>
-			</tr>
-			<tr>
-				<td>Label:<span id="show_label">None</span></td>
-				<td>			
-					<label for="edit_label">Label</label>
-					<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>
-				</td>
-			</tr>
-			<tr>
-				<td>URL:<a id="show_url" target="_blank">None</a></td>
-				<td>
-					<label for="edit_url">URL</label>
-					<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="button" value="Update node" onClick="updateNode(this.form)"/></td>
-			</tr>		
-		</table>	
+			<span id="show_label">None</span>	
+			<label for="edit_label">Label</label>
+			<input id="edit_label" name="edit_label" type="text" size="50" value="Label" disabled="disabled"/>
+			<a id="show_url" target="_blank">None</a>
+			<label for="edit_url">URL&nbsp;&nbsp;</label>
+			<input id="edit_url" name="edit_url" type="text" size="50" value="URL" disabled="disabled"/>
+			<input type="button" value="Update node" onClick="updateNode(this.form)"/>	
 		</form>			 
-
-		<input type="button" value="Expand all" onClick="expandAll()"/>
+	</div>
+	<div id="actions">
+		<input type="button" value="Expand all" onClick="expandAll()"/><br/>
 		<input type="button" value="Collapse all" onClick="collapseAll()"/>
-		<input type="button" value="Zoom to Fit" onClick="zoomToFit()"/>
 	</div>
 </body>
 </html>
