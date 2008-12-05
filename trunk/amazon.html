@@ -1,25 +1,74 @@
 <html>
 <head>
+<title>Treeview Example 3 - Sitemap</title>
 <script type="text/javascript" src="lib/processing.js"></script>
 <script type="text/javascript" src="lib/treeview.js"></script>
+<script type="text/javascript">
+	function loadTree(){
+		setActiveColor("#D1A925");
+		setCanvasColor("#FFFAE4");
+		setNodeColor("#40637D");
+		setNodeFontType("Calibri");
+		setFontColor("#FFFFFF");
+		setSelectedColor("#26393D");
+		setHoverColor("#D1A925");
+		setLineColor("#26393D");
+		setBorderColor("#26393D");
+		setHasBorder(false);
+		setIsExpanded(true);
+		//zoomToFit();
+		displayTree('amazon.xml', 900, 500);		
+	}
+</script>
+
+<style type="text/css">
+body {
+	font-family: Calibri;
+}
+canvas {
+	text-align: center;
+	border: 1px solid darkred;
+}
+#editor_table {
+	border: 1px solid darkred;
+}
+</style>
 </head>
 
-<body onload="displayTree('data.xml', window.innerWidth-200, window.innerHeight-200)">
+
+<body onload="loadTree()">
 	<canvas id="canvas"></canvas>
 	<div id="editor">
-		Current Node<br/>
-		Label:<span id="show_label">None</span> URL:<a id="show_url" target="_blank">None</span>
 		<form name="edit_form" action="" method="POST">
-			Selected Node<br/>
-			<label for="edit_label">Label</label>
-			<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>
-			<label for="edit_url">URL</label>
-			<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>
-			<input type="button" value="Update node" onClick="updateNode(this.form)"/>
-			<br/>
-		</form>
+		<table id="editor_table">
+			<tr>
+				<td>Current Node</td>
+				<td>Selected Node</td>
+			</tr>
+			<tr>
+				<td>Label:<span id="show_label">None</span></td>
+				<td>			
+					<label for="edit_label">Label</label>
+					<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>
+				</td>
+			</tr>
+			<tr>
+				<td>URL:<a id="show_url" target="_blank">None</a></td>
+				<td>
+					<label for="edit_url">URL</label>
+					<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="Update node" onClick="updateNode(this.form)"/></td>
+			</tr>		
+		</table>	
+		</form>			 
+
 		<input type="button" value="Expand all" onClick="expandAll()"/>
 		<input type="button" value="Collapse all" onClick="collapseAll()"/>
+		<input type="button" value="Zoom to Fit" onClick="zoomToFit()"/>
 	</div>
 </body>
 </html>

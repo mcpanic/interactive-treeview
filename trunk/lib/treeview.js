@@ -184,6 +184,7 @@ function collapseNode(node){
 function expandAllNodes(node){
 	for (var i = 0; i < node.children.length; i++) {
 		node.children[i].visible = true;
+		node.children[i].expanded = true;
 		calculateChildrenPosition(node);
 		expandAllNodes(node.children[i]);
 	}
@@ -209,14 +210,17 @@ function calculateChildrenPosition(node){
 			node.children[i].moved = true;
 		}
 	}
-}				
+}		
+		
 //Expand all nodes
 function expandAll(){
+	root.expanded = true;
 	expandAllNodes(root);
 }
 
 //Collapse all nodes
 function collapseAll(){
+	root.expanded = false;
 	collapseNode(root);
 }
 
@@ -237,7 +241,7 @@ function saveImage(filename) {
 	
 //Set the cursor based on mouse pointer location
 function setCursor(state){	
-	if (cursorState == 4) { // dragging now, do not change the cursor unless unlock entered
+	if (cursorState == 4 || cursorState == 6) { // dragging now, do not change the cursor unless unlock entered
 		if (state != 5)
 			return;	
 	}	
@@ -267,14 +271,13 @@ function setCursor(state){
 		canvas.style.cursor = "move";
 	} else if (cursorState == 5) {		// disable dragging cursor lock
 		canvas.style.cursor = "default";
+	} else if (cursorState == 6) {		// zoom
+		canvas.style.cursor = "n-resize";
 	} 				
 }
 	
 //Get appropriate text size for the current node	
 function getTextSize(node){
-	//node.x
-	//node.y
-	//node.width
 	return (node.height / 2);
 }
 	
@@ -438,8 +441,10 @@ function displayTree(xmlFile, width, height){
 		setCursor(0);
 		if (isDanceEnabled())
 			dance(3);
-		if (isExpanded())
+		if (isExpanded()) {
+			setIsExpanded(false);
 			expandAll();
+		}	
 	}
 
 	
@@ -565,6 +570,7 @@ function displayTree(xmlFile, width, height){
  				}
  			 	difx = p.mouseX;
  				dify = p.mouseY;
+				setCursor(6);
  			}
 			return;		
 		}
@@ -646,6 +652,22 @@ function displayTree(xmlFile, width, height){
 			}	
 		} else if (mouseMoved){
 			if (p.mouseButton == p.LEFT) {
+				clickedNode = null;
+				//Determine which node is clicked on
+				for (var i = 0; i < allNodes.length; i++) {
+					if (p.mouseX >= allNodes[i].x - allNodes[i].width / 2 && p.mouseX <= allNodes[i].x + allNodes[i].width / 2 &&
+					p.mouseY >= allNodes[i].y - allNodes[i].height / 2 &&
+					p.mouseY <= allNodes[i].y + allNodes[i].height / 2) {
+						clickedNode = allNodes[i];
+						break;
+					}
+				}
+				if (clickedNode == null) {
+					// dragging is finished, so back to default cursor
+					setCursor(5);
+					return;
+				}
+			} else if (p.mouseButton == p.RIGHT){
 				clickedNode = null;
 				//Determine which node is clicked on
 				for (var i = 0; i < allNodes.length; i++) {
