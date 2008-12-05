@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node>
+	<label>Python Tutorial</label>
+	<url>http://www.python.org/doc/2.5.2/tut/tut.html</url>
+	<children>
+		<node>
+			<label>Front Matter</label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>		
+		<node>
+			<label>Contents</label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[1. Whetting Your Appetite]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[2. Using the Python Interpreter]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[3. An Informal Introduction to Python]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[4. More Control Flow Tools]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[5. Data Structures]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[6. Modules]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[7. Input and Output]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[8. Errors and Exceptions]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[9. Classes]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[10. Brief Tour of the Standard Library]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[11. Brief Tour of the Standard Library - Part II]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[12. What Now?]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[A. Interactive Input Editing and History Substitution]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[B. Floating Point Arithmetic: Issues and Limitations]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>					
+		<node>
+			<label><![CDATA[C. History and License]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>			
+		<node>
+			<label><![CDATA[D. Glossary]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>			
+		<node>
+			<label><![CDATA[Index]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>			
+		<node>
+			<label><![CDATA[About this document ...]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>				
+	</children>
+</node>	
