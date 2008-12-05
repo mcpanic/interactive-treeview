@@ -31,6 +31,9 @@ canvas {
 	top:100px;
 	right:0px;
 }
+#notshow{
+	display: none;
+}
 </style>
 </head>
 
@@ -42,21 +45,21 @@ canvas {
 		<table id="editor_table">
 			<tr>
 				<td>Label:<span id="show_label">None</span></td>
-				<td>			
-					<!--<label for="edit_label">Label</label>
-					<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>-->
+				<td id="notshow">			
+					<label for="edit_label">Label</label>
+					<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>
 				</td>
 			</tr>
 			<tr>
 				<td>URL:<a id="show_url" target="_blank">None</a></td>
-				<td>
-					<!--<label for="edit_url">URL</label>
-					<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>-->
+				<td id="notshow">
+					<label for="edit_url">URL</label>
+					<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>
 				</td>
 			</tr>
-			<tr>
+			<tr id="notshow">
 				<td></td>
-				<td><!--<input type="button" value="Update node" onClick="updateNode(this.form)"/>--></td>
+				<td><input type="button" value="Update node" onClick="updateNode(this.form)"/></td>
 			</tr>		
 		</table>	
 		</form>			 
