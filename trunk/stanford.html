@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript" src="lib/processing.js"></script>
+<script type="text/javascript" src="lib/treeview.js"></script>
+</head>
+
+<body onload="displayTree('data.xml', window.innerWidth-200, window.innerHeight-200)">
+	<canvas id="canvas"></canvas>
+	<div id="editor">
+		Current Node<br/>
+		Label:<span id="show_label">None</span> URL:<a id="show_url" target="_blank">None</span>
+		<form name="edit_form" action="" method="POST">
+			Selected Node<br/>
+			<label for="edit_label">Label</label>
+			<input id="edit_label" name="edit_label" type="text" size="25" value="Label" disabled="disabled"/>
+			<label for="edit_url">URL</label>
+			<input id="edit_url" name="edit_url" type="text" size="25" value="URL" disabled="disabled"/>
+			<input type="button" value="Update node" onClick="updateNode(this.form)"/>
+			<br/>
+		</form>
+		<input type="button" value="Expand all" onClick="expandAll()"/>
+		<input type="button" value="Collapse all" onClick="collapseAll()"/>
+	</div>
+</body>
+</html>

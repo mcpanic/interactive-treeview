@@ -5,102 +5,246 @@
 	<children>
 		<node>
 			<label>Front Matter</label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node1.html]]></url>
 			<children></children>
 		</node>		
 		<node>
 			<label>Contents</label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node2.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[1. Whetting Your Appetite]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node3.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[2. Using the Python Interpreter]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
-			<children></children>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node4.html]]></url>
+			<children>
+				<node>
+					<label><![CDATA[2.1 Invoking the Interpreter]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node4.html#SECTION004100000000000000000]]></url>
+					<children></children>
+				</node>		
+				<node>
+					<label><![CDATA[2.2 The Interpreter and Its Environment]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node4.html#SECTION004200000000000000000]]></url>
+					<children>
+						<node>
+							<label><![CDATA[2.2.1 Error Handling]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node4.html#SECTION004210000000000000000]]></url>
+							<children></children>
+						</node>		
+						<node>
+							<label><![CDATA[2.2.2 Executable Python Scripts]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node4.html#SECTION004220000000000000000]]></url>
+							<children></children>
+						</node>	
+						<node>
+							<label><![CDATA[2.2.3 Source Code Encoding]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node4.html#SECTION004230000000000000000]]></url>
+							<children></children>
+						</node>		
+						<node>
+							<label><![CDATA[2.2.4 The Interactive Startup File]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node4.html#SECTION004240000000000000000]]></url>
+							<children></children>
+						</node>							
+					</children>
+				</node>					
+			</children>
 		</node>	
 		<node>
 			<label><![CDATA[3. An Informal Introduction to Python]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node5.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[4. More Control Flow Tools]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
-			<children></children>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node6.html]]></url>
+			<children>
+				<node>
+					<label><![CDATA[4.1 if Statements]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node6.html#SECTION006100000000000000000]]></url>
+					<children></children>
+				</node>		
+				<node>
+					<label><![CDATA[4.2 for Statements]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node6.html#SECTION006200000000000000000]]></url>
+					<children></children>
+				</node>	
+				<node>
+					<label><![CDATA[4.3 range() Function]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node6.html#SECTION006300000000000000000]]></url>
+					<children></children>
+				</node>					
+			</children>
 		</node>	
 		<node>
 			<label><![CDATA[5. Data Structures]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node7.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[6. Modules]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node8.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[7. Input and Output]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
-			<children></children>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node9.html]]></url>
+			<children>
+				<node>
+					<label><![CDATA[7.1 Fancier Output Formatting]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node9.html#SECTION009100000000000000000]]></url>
+					<children></children>
+				</node>		
+				<node>
+					<label><![CDATA[7.2 Reading and Writing Files]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node9.html#SECTION009200000000000000000]]></url>
+					<children>
+						<node>
+							<label><![CDATA[7.2.1 Methods of File Objects]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node9.html#SECTION009210000000000000000]]></url>
+							<children></children>
+						</node>		
+						<node>
+							<label><![CDATA[7.2.2 The pickle Module]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node9.html#SECTION009220000000000000000]]></url>
+							<children></children>
+						</node>							
+					</children>
+				</node>						
+			</children>
 		</node>	
 		<node>
 			<label><![CDATA[8. Errors and Exceptions]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node10.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[9. Classes]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
-			<children></children>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html]]></url>
+			<children>
+				<node>
+					<label><![CDATA[9.1 A Word About Terminology]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html#SECTION0011100000000000000000]]></url>
+					<children></children>
+				</node>	
+				<node>
+					<label><![CDATA[9.2 Python Scopes and Name Spaces]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html#SECTION0011200000000000000000]]></url>
+					<children></children>
+				</node>	
+				<node>
+					<label><![CDATA[9.3 A First Look at Classes]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html#SECTION0011300000000000000000]]></url>
+					<children>
+						<node>
+							<label><![CDATA[9.3.1 Class Definition Syntax]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html#SECTION0011310000000000000000]]></url>
+							<children></children>
+						</node>		
+						<node>
+							<label><![CDATA[9.3.2 Class Objects]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html#SECTION0011320000000000000000]]></url>
+							<children></children>
+						</node>		
+						<node>
+							<label><![CDATA[9.3.3 Instance Objects]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html#SECTION0011330000000000000000]]></url>
+							<children></children>
+						</node>		
+						<node>
+							<label><![CDATA[9.3.4 Method Objects]]></label>
+							<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node11.html#SECTION0011340000000000000000]]></url>
+							<children></children>
+						</node>								
+					</children>
+				</node>					
+			</children>
 		</node>	
 		<node>
 			<label><![CDATA[10. Brief Tour of the Standard Library]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node12.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[11. Brief Tour of the Standard Library - Part II]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node13.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[12. What Now?]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node14.html]]></url>
 			<children></children>
 		</node>	
 		<node>
 			<label><![CDATA[A. Interactive Input Editing and History Substitution]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
-			<children></children>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node15.html]]></url>
+			<children>
+				<node>
+					<label><![CDATA[A.1 Line Editing]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node15.html#SECTION0015100000000000000000]]></url>
+					<children></children>
+				</node>			
+				<node>
+					<label><![CDATA[A.2 History Substitution]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node15.html#SECTION0015200000000000000000]]></url>
+					<children></children>
+				</node>		
+				<node>
+					<label><![CDATA[A.3 Key Bindings]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node15.html#SECTION0015300000000000000000]]></url>
+					<children></children>
+				</node>		
+				<node>
+					<label><![CDATA[A.4 Commentary]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node15.html#SECTION0015400000000000000000]]></url>
+					<children></children>
+				</node>						
+			</children>
 		</node>	
 		<node>
 			<label><![CDATA[B. Floating Point Arithmetic: Issues and Limitations]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node16.html]]></url>
 			<children></children>
 		</node>					
 		<node>
 			<label><![CDATA[C. History and License]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
-			<children></children>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node17.html]]></url>
+			<children>
+				<node>
+					<label><![CDATA[C.1 History of the software]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node17.html#SECTION0017100000000000000000]]></url>
+					<children></children>
+				</node>	
+				<node>
+					<label><![CDATA[C.2 Terms and conditions for accessing or otherwise using Python]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node17.html#SECTION0017200000000000000000]]></url>
+					<children></children>
+				</node>	
+				<node>
+					<label><![CDATA[C.3 Licenses and Acknowledgements for Incorporated Software]]></label>
+					<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node17.html#SECTION0017300000000000000000]]></url>
+					<children></children>
+				</node>					
+			</children>
 		</node>			
 		<node>
 			<label><![CDATA[D. Glossary]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node18.html]]></url>
 			<children></children>
 		</node>			
 		<node>
 			<label><![CDATA[Index]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node19.html]]></url>
 			<children></children>
 		</node>			
 		<node>
 			<label><![CDATA[About this document ...]]></label>
-			<url><![CDATA[http://www.amazon.com/]]></url>
+			<url><![CDATA[http://www.python.org/doc/2.5.2/tut/node20.html]]></url>
 			<children></children>
 		</node>				
 	</children>

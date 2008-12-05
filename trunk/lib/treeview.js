@@ -335,21 +335,62 @@ function isDanceEnabled(){
 	return danceEnabled;
 }
 
-function dance(power){	
+//Little fun!
+function dance(power){
+	var counter;
+
 	if (!isDanceEnabled())
 		return;
-	for(var i=0; i<allNodes.length; i++){
-		allNodes[i].x += power*10;
-		allNodes[i].y += power*10;	
-		allNodes[i].x -= power;
-		allNodes[i].y -= power;			
-		//allNodes[i].width = allNodes[i].oldwidth * zoomLevel;
-		//allNodes[i].height = allNodes[i].oldheight * zoomLevel;									
-	
-		//p.scale(zoomLevel);
+			
+	if (dance.counter == undefined)
+		dance.counter = 0;
+	else
+		dance.counter++;
 
-	}	
-	disableDance();	
+	switch(dance.counter % 16){
+	case 0:
+	case 1:
+	case 2:
+	case 3:	
+		for (var i = 0; i < allNodes.length; i++) {
+			allNodes[i].x -= power;
+			allNodes[i].y -= power;
+		}		
+	break;
+	case 4:
+	case 5:
+	case 6:
+	case 7:	
+		for (var i = 0; i < allNodes.length; i++) {
+			allNodes[i].x += power;
+			allNodes[i].y -= power;
+		}	
+	break;
+	case 8:
+	case 9:
+	case 10:
+	case 11:	
+		for (var i = 0; i < allNodes.length; i++) {
+			allNodes[i].x += power;
+			allNodes[i].y += power;
+		}	
+	break;
+	case 12:
+	case 13:
+	case 14:
+	case 15:	
+		for (var i = 0; i < allNodes.length; i++) {
+			allNodes[i].x -= power;
+			allNodes[i].y += power;
+		}	
+	break;		
+	}
+
+	if (dance.counter == 31) {
+		//alert(dance.counter);
+		dance.counter = 0;
+		disableDance();
+	}
 }
 
 //Main function - called from HTML
@@ -396,9 +437,9 @@ function displayTree(xmlFile, width, height){
 		display(root);
 		setCursor(0);
 		if (isDanceEnabled())
-			dance(5);
-		//if (isExpanded())
-		//	expandNode(root);
+			dance(3);
+		if (isExpanded())
+			expandAll();
 	}
 
 	
@@ -652,7 +693,7 @@ function updateNode (form) {
 //	- Node size, node border, node font
 	
 // Default color scheme from Kuler
-var user_isExpanded = true;	// true or false
+var user_isExpanded = false;	// true or false
 var user_canvasColor = "#FCFAE1";
 var user_canvasWidth = "600";
 var user_canvasHeight = "400";
@@ -663,7 +704,7 @@ var user_activeColor = "#7D8A2E";
 var user_selectedColor = "#FF8598";
 var user_lineColor = "#FF8598";
 var user_borderColor = "#000000";
-var user_nodeWidth = 100;
+var user_nodeWidth = 80;
 var user_nodeHeight = 30;
 var user_hasBorder = false;	// true or false
 var user_nodeFontType = "Verdana";
