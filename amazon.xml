@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node>
+	<label>Amazon</label>
+	<url>http://www.amazon.com/</url>
+	<children>
+		<node>
+			<label><![CDATA[Movies, Music & Games]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>		
+		<node>
+			<label><![CDATA[Digital Downloads]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Computers & Office]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Electronics]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Home & Garden]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Grocery, Health & Beauty]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Apparel, Shoes & Jewelry]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Toys, Kids & Baby]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Sports & Outdoors]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		<node>
+			<label><![CDATA[Tools, Auto & Industrial]]></label>
+			<url><![CDATA[http://www.amazon.com/]]></url>
+			<children></children>
+		</node>	
+		
+		
+	</children>
+</node>	
