@@ -1,4 +1,4 @@
-#How can you use treeview in your web application
+How can you use treeview in your web application
 
 = Introduction =
 
@@ -61,6 +61,4 @@ Because this interaction is entirely JavaScript based, essentially any existing 
 ===setHasBorder===
 ===getBorderColor===
 ===setBorderColor===
-
-
 
