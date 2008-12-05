@@ -1,10 +1,27 @@
 <html>
 <head>
+<title>Treeview Example 2 - Interactive Table of Contents</title>
 <script type="text/javascript" src="lib/processing.js"></script>
 <script type="text/javascript" src="lib/treeview.js"></script>
+<script type="text/javascript">
+	function loadTree(){
+		setActiveColor("#B54926");
+		setCanvasColor("#8F2800");
+		setNodeColor("#FFB03B");
+		setNodeFontType("Arial");
+		setFontColor("#468A67");
+		setSelectedColor("#FFF0A5");
+		setHoverColor("#B54926");
+		setLineColor("#FFF0A5");
+		setBorderColor("#FFF0A5");
+		setHasBorder(true);
+		setIsExpanded(true);
+		displayTree('toc.xml', 900, 500);		
+	}
+</script>
 </head>
 
-<body onload="displayTree('data.xml', window.innerWidth-200, window.innerHeight-200)">
+<body onload="loadTree()">
 	<canvas id="canvas"></canvas>
 	<div id="editor">
 		Current Node<br/>
