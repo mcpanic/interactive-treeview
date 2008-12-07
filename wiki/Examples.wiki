@@ -3,10 +3,10 @@
 
 = Introduction =
 
-[http://www.stanford.edu/~juhokim/treeview/stanford.html Information Management]
+  * [http://www.stanford.edu/~juhokim/treeview/stanford.html Information Management]
 
 
-[http://www.stanford.edu/~juhokim/treeview/toc.html Table of Contents]
+  * [http://www.stanford.edu/~juhokim/treeview/toc.html Table of Contents]
 
 
-[http://www.stanford.edu/~juhokim/treeview/amazon.html Sitemap]
+  * [http://www.stanford.edu/~juhokim/treeview/amazon.html Sitemap]
